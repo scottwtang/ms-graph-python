@@ -7,9 +7,9 @@ def new_client_secret(access_token: str, app_object_id: str, secret_description:
     request_url = f"https://graph.microsoft.com/v1.0/applications/{app_object_id}/addPassword"
 
     request_headers = {
-            "Authorization": "Bearer " + access_token,
-            "Content-Type": "application/json"
-        }
+        "Authorization": "Bearer " + access_token,
+        "Content-Type": "application/json"
+    }
 
     request_body = (
         {
