@@ -1,6 +1,6 @@
 import requests
 
-def new_client_secret(access_token: str, app_object_id: str, secret_description: str = None, secret_start_date_time = None, secret_end_date_time = None):
+def add_client_secret(access_token: str, app_object_id: str, secret_description: str = None, secret_start_date_time = None, secret_end_date_time = None):
     # This function adds a client secret to an application
     # https://docs.microsoft.com/en-us/graph/api/application-addpassword
     
