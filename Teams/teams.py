@@ -7,9 +7,9 @@ def send_chat_message(access_token, chat_id: str, msg_content: str = ""):
     request_url = f"https://graph.microsoft.com/v1.0/chats/{chat_id}/messages"
 
     request_headers = {
-            "Authorization": "Bearer " + access_token,
-            "Content-Type": "application/json"
-        }
+        "Authorization": "Bearer " + access_token,
+        "Content-Type": "application/json"
+    }
 
     request_body = {
         "body": {
@@ -28,9 +28,9 @@ def send_chat_message_attachment(access_token: str, chat_id: str, attachment_nam
     request_url = f"https://graph.microsoft.com/v1.0/chats/{chat_id}/messages"
 
     request_headers = {
-            "Authorization": "Bearer " + access_token,
-            "Content-Type": "application/json"
-        }
+        "Authorization": "Bearer " + access_token,
+        "Content-Type": "application/json"
+    }
 
     request_body = {
         "body": {
