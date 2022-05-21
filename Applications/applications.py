@@ -1,12 +1,9 @@
-def new_client_secret(access_token: str, app_object_id: str, secret_description: str = None, secret_start_date_time = None):
+import requests
+
+def new_client_secret(access_token: str, app_object_id: str, secret_description: str = None, secret_start_date_time = None, secret_end_date_time = None):
     # This function adds a client secret to an application
     # https://docs.microsoft.com/en-us/graph/api/application-addpassword
     
-    import datetime
-
-    if secret_start_date_time == None:
-        secret_start_date_time = datetime.datetime.now().isoformat()
-
     request_url = f"https://graph.microsoft.com/v1.0/applications/{app_object_id}/addPassword"
 
     request_headers = {
@@ -18,7 +15,8 @@ def new_client_secret(access_token: str, app_object_id: str, secret_description:
         {
             "passwordCredential": {
                 "displayName": secret_description,
-                "startDateTime": secret_start_date_time
+                "startDateTime": secret_start_date_time,
+                "endDateTime": secret_end_date_time,
             }
         }
     )
