@@ -1,3 +1,5 @@
+import requests
+
 def send_chat_message(access_token, chat_id: str, msg_content: str = ""):
     # This function sends a Teams chat message, see Example 1
     # https://docs.microsoft.com/en-us/graph/api/chatmessage-post?view=graph-rest-1.0&tabs=http#example-1-send-a-hello-world-message-in-a-channel
@@ -16,6 +18,7 @@ def send_chat_message(access_token, chat_id: str, msg_content: str = ""):
     }
 
     result = requests.post(url = request_url, headers = request_headers, json = request_body)
+    
     return(result)
 
 def send_chat_message_attachment(access_token: str, chat_id: str, attachment_name: str, attachment_path: str, attachment_id: str, msg_content: str = ""):
@@ -45,4 +48,5 @@ def send_chat_message_attachment(access_token: str, chat_id: str, attachment_nam
     }
 
     result = requests.post(url = request_url, headers = request_headers, json = request_body)
+    
     return(result)
